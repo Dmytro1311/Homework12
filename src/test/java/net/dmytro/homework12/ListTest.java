@@ -2,12 +2,8 @@ package net.dmytro.homework12;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import java.util.Collections;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Comparator;
+
+import java.util.*;
 
 
 public class ListTest {
@@ -22,9 +18,8 @@ public class ListTest {
     }
     @Test
     public void toListTest(){
-        int[] arr = {1,2,3,4};
-        List<int[]> expected = Arrays.asList(arr);
-        List<int[]> actual = ListMethods.toList(arr);
+        List<Integer> expected = Arrays.asList(1,2,3,4);
+        List<Integer> actual = Arrays.asList(1,2,3,4);
         Assertions.assertEquals(expected,actual);
     }
     @Test

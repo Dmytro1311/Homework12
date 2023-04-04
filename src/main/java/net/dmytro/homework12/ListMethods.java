@@ -2,13 +2,8 @@ package net.dmytro.homework12;
 
 
 import lombok.Value;
-import java.util.List;
-import java.util.Set;
-import java.util.Map;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.HashMap;
-import java.util.ArrayList;
+
+import java.util.*;
 
 
 public class ListMethods {
@@ -23,8 +18,11 @@ public class ListMethods {
     }
     return count;
   }
-  public static List<int[]> toList(int[]arr){
-    List<int[]> list = Arrays.asList(arr);
+  public static List<Integer> toList(int[]arr){
+    List<Integer> list = new ArrayList<>();
+    for (int i : arr){
+      list.add(i);
+    }
     return list;
   }
   public static List<Integer> findUnique(List<Integer>list){
@@ -54,19 +52,14 @@ public class ListMethods {
     }
   }
 public static List<FindOccuran> findOccurans(List<String>list){
-  List<FindOccuran> listToReturn = new ArrayList<>();
-  Map<String,Integer> wordsCount = new HashMap<>();
-  for (String s:list){
-    if (!wordsCount.containsKey(s)){
-      wordsCount.put(s,1);
-    }else {
-      int i = wordsCount.get(s);
-      wordsCount.put(s,i+1);
-    }
+    Set<String> words = new HashSet<>(list);
+    List<FindOccuran> listToReturn = new ArrayList<>();
+
+  for (String s:words){
+     FindOccuran findOccuran = new FindOccuran(s, Collections.frequency(list,s));
+     listToReturn.add(findOccuran);
   }
-  for (Map.Entry<String,Integer> mapEntry: wordsCount.entrySet()){
-    listToReturn.add(new FindOccuran(mapEntry.getKey(), mapEntry.getValue()));
-  }
+  Collections.sort(listToReturn);
   return listToReturn;
 
 
