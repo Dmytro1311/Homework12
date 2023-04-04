@@ -1,9 +1,5 @@
 package net.dmytro.homework14.coffe.order;
 
-
-
-
-
 import lombok.Data;
 
 import java.util.LinkedList;
@@ -31,24 +27,20 @@ public class CoffeeOrderBoard {
     }
 
     public void deliver(int orderNumber) {
-        Order order = null;
+        Order order;
 
         for (Order count : orders) {
             if (count.getOrderNumber() == orderNumber) {
                 order = count;
                 orders.remove(count);
+                System.out.println("Order # " + order.getOrderNumber() + " for " + order.getClientName());
                 break;
+            } else {
+                System.out.println("Order #" + orderNumber + "not found");
             }
-
-        }
-        if (order != null) {
-            System.out.println("Order # " + order.getOrderNumber() + " for " + order.getClientName());
-        } else {
-            System.out.println("Order #" + orderNumber + "not found");
-        }
         }
 
-
+    }
     public void draw(){
         for (Order order : orders) {
             System.out.println(order.getOrderNumber() + " | " +  order.getClientName());
