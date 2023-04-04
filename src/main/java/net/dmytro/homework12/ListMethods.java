@@ -2,8 +2,14 @@ package net.dmytro.homework12;
 
 
 import lombok.Value;
+import java.util.List;
+import java.util.Set;
+import java.util.Map;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.ArrayList;
 
-import java.util.*;
 
 public class ListMethods {
 
@@ -11,6 +17,7 @@ public class ListMethods {
     int count = 0;
     for(String word : list){
       if (word.equals(str)){
+
         count++;
       }
     }
@@ -41,28 +48,27 @@ public class ListMethods {
     String words;
     int count;
 
-
-
     @Override
     public int compareTo(FindOccuran o) {
       return this.words.compareTo(o.words);
     }
   }
 public static List<FindOccuran> findOccurans(List<String>list){
+  List<FindOccuran> listToReturn = new ArrayList<>();
   Map<String,Integer> wordsCount = new HashMap<>();
-  for (String word : list) {
-    if (wordsCount.containsKey(word)) {
-      wordsCount.put(word, wordsCount.get(word) + 1);
-    } else {
-      wordsCount.put(word, 1);
+  for (String s:list){
+    if (!wordsCount.containsKey(s)){
+      wordsCount.put(s,1);
+    }else {
+      int i = wordsCount.get(s);
+      wordsCount.put(s,i+1);
     }
   }
-  List<FindOccuran> occurans = new ArrayList<>();
-  for (Map.Entry<String, Integer> entry : wordsCount.entrySet()){
-    FindOccuran findOccuran = new FindOccuran(entry.getKey(),entry.getValue());
-    occurans.add(findOccuran);
+  for (Map.Entry<String,Integer> mapEntry: wordsCount.entrySet()){
+    listToReturn.add(new FindOccuran(mapEntry.getKey(), mapEntry.getValue()));
   }
-  return occurans;
+  return listToReturn;
+
 
 }
 }
