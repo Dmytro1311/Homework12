@@ -3,7 +3,7 @@ package net.dmytro.homework13;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static net.dmytro.homework13.Algorithms.quickSort;
+
 
 public class AlgorithmsTest {
     @Test
