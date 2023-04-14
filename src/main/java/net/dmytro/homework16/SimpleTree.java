@@ -14,11 +14,7 @@ public class SimpleTree {
             current.left = addRecursive(current.left, value);
         } else if (value > current.value) {
             current.right = addRecursive(current.right, value);
-        } else {
-
-            return current;
         }
-
         return current;
     }
     public void add(int value){
