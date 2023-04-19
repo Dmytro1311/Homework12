@@ -9,49 +9,38 @@ public class Box<T extends Fruit> {
     private float weight;
     private final List<T> fruits;
 
-    public  Box() {
+    public Box() {
         this.weight = 0;
         this.fruits = new ArrayList<>();
     }
 
-    public void add(T fruit){
-        if (fruits.isEmpty() || fruits.get(0).getClass().equals(fruit.getClass())){
-            fruits.add(fruit);
-        }else {
-            System.out.println("Cannot add fruit of different type to the box");
-        }
+    public boolean add(T fruit) {
+        return fruits.add(fruit);
     }
 
 
-    public void add(List <T> fruit) {
-            for (T fruity : fruit) {
-                this.fruits.add(fruity);
-            }
-        }
-
-        public float getWeight() {
-            for (T fruits : fruits) {
-                weight += fruits.getWEIGHT();
-
-            }
-            return weight;
-
-        }
-
-        public boolean compare (Box<T> box){
-            return this.getWeight() == box.getWeight();
-
-        }
-        public void mergeTo (Box<T> box) {
-            if (fruits.size() == 0 || box.fruits.size() == 0) {
-                return;
-            }
-            if (fruits.get(0).getClass() == box.fruits.get(0).getClass()) {
-                fruits.addAll(box.fruits);
-                box.fruits.clear();
-            }
-
-        }
-
+    public boolean add(List<T> fruit) {
+        return fruits.addAll(fruit);
     }
+
+    public float getWeight() {
+        for (int i = 0; i < fruits.size(); i++){
+            weight += fruits.get(i).getWEIGHT();
+        }
+        return weight;
+    }
+
+    public boolean compare(Box<T> box) {
+        return this.getWeight() == box.getWeight();
+    }
+
+    public void mergeTo(Box<T> box) {
+        if (fruits.size() == 0 || box.fruits.size() == 0) {
+            return;
+        }
+        fruits.addAll(box.fruits);
+        box.fruits.clear();
+    }
+
+}
 

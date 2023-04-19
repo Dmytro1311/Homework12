@@ -1,5 +1,7 @@
 package net.dmytro.homework17.fruit_box;
 
+import java.util.List;
+
 public class Apple extends Fruit{
 
     public Apple() {

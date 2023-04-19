@@ -24,17 +24,19 @@ public class BoxTest {
     }
 
     @Test
-    void getWeightTest() {
+    void getAppleWeightTest() {
         Box<Apple> box1 = new Box<>();
         box1.add(new Apple());
         box1.add(new Apple());
         Assertions.assertEquals(2.0f, box1.getWeight());
 
+    }
+    @Test
+    void getOrangeWeightTest(){
         Box<Orange> box2 = new Box<>();
         box2.add(new Orange());
         box2.add(new Orange());
         Assertions.assertEquals(3.0f, box2.getWeight());
-
     }
 
     @Test
