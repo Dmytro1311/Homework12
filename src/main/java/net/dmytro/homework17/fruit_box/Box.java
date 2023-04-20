@@ -7,11 +7,11 @@ import java.util.List;
 @Data
 public class Box<T extends Fruit> {
 
-    private float weight;
+
     private final List<T> fruits;
 
     public Box() {
-        this.weight = 0;
+
         this.fruits = new ArrayList<>();
     }
 
