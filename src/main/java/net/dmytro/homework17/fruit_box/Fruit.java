@@ -6,7 +6,7 @@ import lombok.Data;
 public class Fruit {
 
     private final String name;
-    private  final float WEIGHT;
+    private  final float weight;
 
 
 }

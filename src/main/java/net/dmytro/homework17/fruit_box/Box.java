@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 @Data
 public class Box<T extends Fruit> {
-    Fruit fruit;
+
     private float weight;
     private final List<T> fruits;
 
@@ -26,7 +26,7 @@ public class Box<T extends Fruit> {
 
     public float getWeight() {
         if (!fruits.isEmpty()){
-            float toReturn = fruits.get(0).getWEIGHT();
+            float toReturn = fruits.get(0).getWeight();
             return toReturn * fruits.size();
 
         }else {
