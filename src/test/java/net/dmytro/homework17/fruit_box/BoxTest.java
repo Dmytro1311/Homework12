@@ -38,6 +38,11 @@ public class BoxTest {
         box2.add(new Orange());
         Assertions.assertEquals(3.0f, box2.getWeight());
     }
+    @Test
+    void getFruitFromEmptyBox(){
+        Box<Apple> box = new Box<>();
+        Assertions.assertEquals(0.0,box.getWeight());
+    }
 
     @Test
     void compareTest() {
