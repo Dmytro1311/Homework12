@@ -3,11 +3,15 @@ package net.dmytro.homework20;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
+
+import java.util.List;
 
 
 @Getter
 @Setter
 @AllArgsConstructor
+@ToString
 public class Product {
 
     private ProductType type;
@@ -15,20 +19,7 @@ public class Product {
     private int id;
     private boolean isDiscount;
 
-    public double priceWithDiscount(double discountSize){
-        return price * discountSize;
+
+    public Product() {
     }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "type=" + type +
-                ", price=" + price +
-                ", id=" + id +
-                ", isDiscount=" + isDiscount +
-                '}';
-    }
-
-
-
 }
