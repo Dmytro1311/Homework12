@@ -2,10 +2,7 @@ package net.dmytro.homework20;
 
 import lombok.SneakyThrows;
 import java.time.LocalDate;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ProductMain {
@@ -21,19 +18,16 @@ public class ProductMain {
 
 
     }
-    public static List<Product> getProductListWithDiscount(List<Product> products,ProductType type){
+    public static List<Double> getProductListWithDiscount(List<Product> products, ProductType type){
         return products.stream()
                 .filter(product -> product.getType().equals(type) && product.isDiscount())
-                .map(product -> {
-                    double priceWithDiscount = product.getPrice() * 0.9;
-                    return new Product(product.getType(), priceWithDiscount, product.getId(), true);
-                })
+                .map(product -> product.getPrice() * 0.9)
                 .toList();
     }
     @SneakyThrows
     public static List<Product> getCheapestProductFromPrice(List<Product> products, ProductType type)  {
         return Collections.singletonList(products.stream()
-                .filter(product -> product.getType().equals(ProductType.BOOK))
+                .filter(product -> product.getType().equals(type))
                 .min(Comparator.comparing(Product::getPrice))
                 .orElseThrow(() -> new Exception("Product [category:" + type.toString() + "] not found")));
 
@@ -49,8 +43,9 @@ public class ProductMain {
 
     public static double getSumWithTypeAndFresh(List<Product> products, ProductType type, int year){
         return products.stream()
-                .filter(product -> product.getType().equals(type) && product.getPrice() < 75
-                        && LocalDate.now().getYear() == year)
+                .filter(product -> product.getType().equals(type))
+                .filter(product -> product.getPrice() < 75)
+                .filter(product -> LocalDate.now().getYear() == year)
                 .mapToDouble(Product::getPrice)
                 .sum();
     }

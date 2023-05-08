@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ProductMainTest {
 
@@ -42,10 +43,10 @@ public class ProductMainTest {
     @Test
     void getProductListWithDiscount(){
         var resultList = ProductMain.getProductListWithDiscount(testProduct,ProductType.BOOK);
-        var actual = resultList.stream().map(Product::getPrice).toList();
-        var expected = List.of(290.7,135.0,229.5);
+//        var actual = resultList.stream().map.toList();
+        var expected = List.of(290.7,135.0,229.5, 45.0, 54.0);
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected,resultList);
     }
     @Test
     void getCheapestProductFromPriceWithTypeBook(){
@@ -65,13 +66,9 @@ public class ProductMainTest {
         Product product5 = new Product(ProductType.BOOK, 255, 5, true);
 
         testProduct2.add(product1);
-        Thread.sleep(100);
         testProduct2.add(product5);
-        Thread.sleep(100);
         testProduct2.add(product4);
-        Thread.sleep(100);
         testProduct2.add(product3);
-        Thread.sleep(100);
         testProduct2.add(product2);
 
         List <Product> expected = new ArrayList<>();
@@ -90,9 +87,13 @@ public class ProductMainTest {
     @Test
     void getGroupProduct(){
 
+        var expected = testProduct.stream().collect(Collectors.groupingBy(Product::getType));
+
+        Assertions.assertEquals(expected, ProductMain.getProductWithType(testProduct));
 
 
 
-        Assertions.assertEquals(, ProductMain.getProductWithType(testProduct));
+
+
     }
 }
