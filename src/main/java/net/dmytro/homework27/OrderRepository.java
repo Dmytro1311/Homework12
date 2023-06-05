@@ -6,7 +6,11 @@ import java.util.List;
 
 public class OrderRepository {
 
-    List<Order> basket = new ArrayList<>();
+    List<Order> basket;
+
+    public OrderRepository() {
+        this.basket = new ArrayList<>();
+    }
 
     public void add(Order order){
         basket.add(order);

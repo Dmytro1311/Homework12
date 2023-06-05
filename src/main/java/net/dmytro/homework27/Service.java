@@ -12,7 +12,6 @@ private OrderRepository orderRepository = new OrderRepository();
         orderRepository.add(order);
 
     }
-
     @WebMethod
     public Order getById(int id){
         return orderRepository.getOrderById(id);
