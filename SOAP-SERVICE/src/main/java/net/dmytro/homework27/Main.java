@@ -11,6 +11,7 @@ public class Main {
     private static final Object SERVICE = new Service();
     public static void main(String[] args) {
         Endpoint endpoint = Endpoint.publish(ADDRES, SERVICE);
+        System.out.println("Endpoint " + ADDRES);
         sleep();
         endpoint.stop();
 
