@@ -1,7 +1,9 @@
 package net.dmytro.homework27;
 
-import javax.jws.WebMethod;
-import javax.jws.WebService;
+
+import jakarta.jws.WebMethod;
+import jakarta.jws.WebService;
+
 import java.util.List;
 
 @WebService

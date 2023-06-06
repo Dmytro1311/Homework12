@@ -1,8 +1,9 @@
 package net.dmytro.homework27;
 
 
+import jakarta.xml.ws.Endpoint;
 import lombok.SneakyThrows;
-import javax.xml.ws.Endpoint;
+
 
 public class Main {
 
