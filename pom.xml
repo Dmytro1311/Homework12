@@ -6,22 +6,29 @@
 
     <groupId>net.dmytro.homework12</groupId>
     <artifactId>homework12_javaPro</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
     <modules>
         <module>SOAP-SERVICE</module>
-
         <module>SOAP-CLIENT</module>
+        <module>homework_28</module>
+
 
     </modules>
 
     <properties>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
+        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+        <lombok.version>1.18.26</lombok.version>
+        <JUnit5.version>5.9.2</JUnit5.version>
+        <mysql-connector-j.version>8.0.33</mysql-connector-j.version>
+        <log4j2.version>2.20.0</log4j2.version>
     </properties>
     <dependencies>
-
         <!-- https://mvnrepository.com/artifact/jakarta.xml.ws/jakarta.xml.ws-api -->
         <dependency>
             <groupId>jakarta.xml.ws</groupId>
@@ -39,16 +46,34 @@
             <version>4.0.1</version>
             <type>pom</type>
         </dependency>
-
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.26</version>
             <scope>compile</scope>
         </dependency>
-
-
+            <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+            <dependency>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>6.0.0</version>
+                <scope>provided</scope>
+            </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
