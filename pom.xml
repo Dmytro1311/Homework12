@@ -6,26 +6,40 @@
 
     <groupId>net.dmytro.homework12</groupId>
     <artifactId>homework12_javaPro</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>SOAP-SERVICE</module>
+        <module>SOAP-CLIENT</module>
+        <module>homework_28</module>
+        <module>Homework_29</module>
+
+
+    </modules>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
+        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+        <lombok.version>1.18.26</lombok.version>
+        <JUnit5.version>5.9.2</JUnit5.version>
+        <mysql-connector-j.version>8.0.33</mysql-connector-j.version>
+        <log4j2.version>2.20.0</log4j2.version>
+        <resteasy.version>3.15.6.Final</resteasy.version>
+        <jackson.core.version>2.15.2</jackson.core.version>
+        <guava.version>32.0.0-jre</guava.version>
+        <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.9.2</version>
-            <scope>test</scope>
+
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
+
 
 </project>
