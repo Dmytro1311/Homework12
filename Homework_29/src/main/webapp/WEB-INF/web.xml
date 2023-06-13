@@ -3,12 +3,8 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
   http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
 
-    <servlet>
-        <servlet-name>HelloWorld</servlet-name>
-        <servlet-class>net.dmytro.homework29.HelloWorld</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>HelloWorld</servlet-name>
-        <url-pattern>/hello</url-pattern>
-    </servlet-mapping>
+    <context-param>
+        <param-name>resteasy.servlet.mapping.prefix</param-name>
+        <param-value>/*</param-value>
+    </context-param>
 </web-app>
