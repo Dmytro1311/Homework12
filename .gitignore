@@ -1,9 +1,3 @@
 /.idea/
 /target
-/SOAP-SERVICE/target/
-/SOAP-CLIENT/target/
-.iml
-/SOAP-CLIENT/
-/SOAP-SERVICE/
-/Homework_28/
-/Homework_29/target/
+

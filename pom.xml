@@ -6,18 +6,6 @@
 
     <groupId>net.dmytro.homework12</groupId>
     <artifactId>homework12_javaPro</artifactId>
-    <version>1.0</version>
-    <packaging>pom</packaging>
-    <modules>
-        <module>SOAP-SERVICE</module>
-        <module>SOAP-CLIENT</module>
-        <module>homework_28</module>
-        <module>Homework_29</module>
-
-
-    </modules>
-
-    <properties>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
@@ -33,6 +21,8 @@
 
     </properties>
     <dependencies>
+
+
 
 
 </project>
