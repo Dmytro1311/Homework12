@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>New Order</title>
+
+</head>
+<body>
+<form th:method="POST" th:action="@{/orders}" th:object="${order}">
+    <label for="order_cost">Order Cost </label>
+    <span id="order_cost" th:text="${order.cost}"></span>
+    <input type="hidden" th:field="*{cost}" id="order_cost_input"/>
+    <br>
+
+    <div id="products-container"></div>
+
+
+    <button type="button" onclick="addProduct()">Add product</button>
+    <input type="submit" value="Create!"/>
+</form>
+</body>
+</html>
